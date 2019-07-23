@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "903045654147",
+    "firebase_url": "https://vestigeproducts-d39ec.firebaseio.com",
+    "project_id": "vestigeproducts-d39ec",
+    "storage_bucket": "vestigeproducts-d39ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903045654147:android:c1ef0300f3f74055",
+        "android_client_info": {
+          "package_name": "com.vestige"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903045654147-dtfolovmk2grd3ebhhq72njdujl32hvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVgDr5gP4BtL-cgxWW0pgAVdxs7-djmNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903045654147-dtfolovmk2grd3ebhhq72njdujl32hvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903045654147:android:f9863096d56ddfe3",
+        "android_client_info": {
+          "package_name": "com.vestigeproductslist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903045654147-dtfolovmk2grd3ebhhq72njdujl32hvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVgDr5gP4BtL-cgxWW0pgAVdxs7-djmNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903045654147-dtfolovmk2grd3ebhhq72njdujl32hvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
