@@ -1,4 +1,4 @@
-import {Platform, StyleSheet, Text, View, StatusBar, TouchableHighlight} from 'react-native';
+import {Platform, StyleSheet, TouchableOpacity, Share,  Image, Text, View, StatusBar, TouchableHighlight} from 'react-native';
 
 import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
@@ -49,6 +49,20 @@ setTimeout(() => {
   });
     this.props.navigation.navigate('ScreenOne' )
   }
+  share = () => {
+    Share.share({
+      message: 'Checkout Vestige Products - https://play.google.com/store/apps/details?id=com.vestigeproductslist',
+      url: 'https://play.google.com/store/apps/details?id=com.vestigeproductslist',
+      title: 'Start Your Own Business'
+    }, {
+      // Android only:
+      dialogTitle: 'Share the app',
+      // iOS only:
+      excludedActivityTypes: [
+        'com.apple.UIKit.activity.PostToTwitter'
+      ]
+    })
+  }
   render() {
     const { navigate } = this.props.navigation
     return (
@@ -56,7 +70,9 @@ setTimeout(() => {
                <View style={styles.toolbar}>
                     <Text style={styles.toolbarButton}></Text>
                     <Text style={styles.toolbarTitle}>Home</Text>
-                    <Text style={styles.toolbarButton}></Text>
+                    <TouchableOpacity style={styles.toolbarButton}onPress={() => this.share()}>
+                    <Image style={{width:30,marginLeft:5,  height:30}}source={require('../images/share.png')}></Image>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.content}>
 
