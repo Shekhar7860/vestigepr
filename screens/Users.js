@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import {  Card, Divider, SearchBar, List, ListItem  } from 'react-native-elements';
 import { db } from './config';
 import firebase from 'react-native-firebase';
+import { InterstitialAdManager, NativeAdsManager,  BannerView, AdSettings  } from 'react-native-fbads';
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
-const advert = firebase.admob().interstitial('ca-app-pub-9784974231819956/6299564369')
+const advert = firebase.admob().interstitial('ca-app-pub-3372831736678620/8974581162')
 const request = new AdRequest();
 request.addKeyword('foobar');
 export default class Users extends Component {
@@ -90,6 +91,14 @@ export default class Users extends Component {
     }
   };
   editUser = (val) => {
+    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
+    InterstitialAdManager.showAd("434555400602082_435239277200361")
+  .then(didClick => {
+    console.log('working')
+  })
+  .catch(error => {
+    console.log(error, 'rror')
+  });
     if(val)
     {
     this.props.navigation.navigate('ScreenTwo', { user: val })
@@ -272,7 +281,7 @@ export default class Users extends Component {
        <Banner
        style={{alignSelf:'center',marginLeft:20}}
     size={"LARGE_BANNER"}
-  unitId={"ca-app-pub-9784974231819956/9956997523"}
+  unitId={"ca-app-pub-3372831736678620/1135140661"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');

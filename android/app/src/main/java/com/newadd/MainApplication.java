@@ -8,6 +8,7 @@ import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import suraj.tiwari.reactnativefbads.FBAdsPackage;
 import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import java.util.Arrays;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
             new SplashScreenReactPackage(),
           new RNFirebaseAdMobPackage(),
           new RNFirebasePackage(),
+          new FBAdsPackage(),
           new RNFirebaseDatabasePackage(),
           new RNFirebaseStoragePackage(),
             new RNFirebaseMessagingPackage()

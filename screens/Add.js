@@ -4,7 +4,8 @@ import { db } from './config';
 import firebase from 'react-native-firebase';
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
-const advert = firebase.admob().interstitial('ca-app-pub-9784974231819956/5449517120')
+import { InterstitialAdManager, NativeAdsManager,  BannerView, AdSettings  } from 'react-native-fbads';
+const advert = firebase.admob().interstitial('ca-app-pub-3372831736678620/3530682795')
 const request = new AdRequest();
 request.addKeyword('foobar');
 
@@ -82,6 +83,14 @@ Alert.alert("please fill all details")
 
 
   goBack = () => {
+    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
+    InterstitialAdManager.showAd("434555400602082_435239277200361")
+  .then(didClick => {
+    console.log('working')
+  })
+  .catch(error => {
+    console.log(error, 'rror')
+  });
     this.props.navigation.navigate('ScreenOne')
   }
 
@@ -144,7 +153,7 @@ setTimeout(() => {
  <Banner
        style={{alignSelf:'center',marginLeft:20, marginTop:10}}
     size={"LARGE_BANNER"}
-  unitId={"ca-app-pub-9784974231819956/5178054385"}
+  unitId={"ca-app-pub-3372831736678620/3913826172"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');

@@ -4,13 +4,15 @@ import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
-const advert2 = firebase.admob().rewarded('ca-app-pub-9784974231819956/7905549252')
-const advert = firebase.admob().interstitial('ca-app-pub-9784974231819956/9999136221')
+import { InterstitialAdManager, NativeAdsManager,  BannerView, AdSettings  } from 'react-native-fbads';
+const advert2 = firebase.admob().rewarded('ca-app-pub-3372831736678620/4652192775')
+const advert = firebase.admob().interstitial('ca-app-pub-3372831736678620/2409172813')
 const request = new AdRequest();
 request.addKeyword('foobar');
 export default class Welcome extends Component {
 
   componentDidMount = () => {
+    
     advert.loadAd(request.build());
     advert2.loadAd(request.build())
 
@@ -37,6 +39,14 @@ setTimeout(() => {
     title: "Welcome"
   }
   goToProducts = () => {
+    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
+    InterstitialAdManager.showAd("434555400602082_435239277200361")
+  .then(didClick => {
+    console.log('working')
+  })
+  .catch(error => {
+    console.log(error, 'rror')
+  });
     this.props.navigation.navigate('ScreenOne' )
   }
   render() {
@@ -67,7 +77,7 @@ setTimeout(() => {
        <Banner
        style={{alignSelf:'center',marginLeft:20}}
     size={"LARGE_BANNER"}
-  unitId={"ca-app-pub-9784974231819956/8097120940"}
+  unitId={"ca-app-pub-3372831736678620/7853071182"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');
