@@ -26,6 +26,7 @@ export default class Users extends Component {
  
  
    componentDidMount() {
+    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
        advert.loadAd(request.build());
  
  advert.on('onAdLoaded', () => {
@@ -91,14 +92,14 @@ export default class Users extends Component {
     }
   };
   editUser = (val) => {
-    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
-    InterstitialAdManager.showAd("434555400602082_435239277200361")
-  .then(didClick => {
-    console.log('working')
-  })
-  .catch(error => {
-    console.log(error, 'rror')
-  });
+   
+  //   InterstitialAdManager.showAd("434555400602082_435239277200361")
+  // .then(didClick => {
+  //   console.log('working')
+  // })
+  // .catch(error => {
+  //   console.log(error, 'rror')
+  // });
     if(val)
     {
     this.props.navigation.navigate('ScreenTwo', { user: val })

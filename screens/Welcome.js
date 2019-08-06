@@ -6,13 +6,13 @@ const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 import { InterstitialAdManager, NativeAdsManager,  BannerView, AdSettings  } from 'react-native-fbads';
 const advert2 = firebase.admob().rewarded('ca-app-pub-3372831736678620/4652192775')
-const advert = firebase.admob().interstitial('ca-app-pub-3372831736678620/2409172813')
+const advert = firebase.admob().interstitial('ca-app-pub-3372831736678620/7672359357')
 const request = new AdRequest();
 request.addKeyword('foobar');
 export default class Welcome extends Component {
 
   componentDidMount = () => {
-    
+    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
     advert.loadAd(request.build());
     advert2.loadAd(request.build())
 
@@ -39,7 +39,7 @@ setTimeout(() => {
     title: "Welcome"
   }
   goToProducts = () => {
-    AdSettings.addTestDevice(AdSettings.currentDeviceHash);
+   
     InterstitialAdManager.showAd("434555400602082_435239277200361")
   .then(didClick => {
     console.log('working')
