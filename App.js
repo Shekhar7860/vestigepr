@@ -12,6 +12,7 @@ import {
   Text,
   View
 } from 'react-native';
+import Join from './screens/Join';
 import { StackNavigator } from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 import Users from './screens/Users';
@@ -23,6 +24,7 @@ const AppNavigator = StackNavigator({
     Welcome: { screen: Welcome
   },
     ScreenOne: { screen: Users},
+    Join: { screen: Join},
     ScreenTwo: { screen: Add},
     ScreenThree: {screen: Edit}
 }, { headerMode: 'none' })
